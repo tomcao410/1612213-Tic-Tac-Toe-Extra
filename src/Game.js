@@ -1,63 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
-
-const boardSize = 20;
-
-// -------------SQUARE-------------
-function Square(props) {
-  return (
-    <button
-      className={"square " + (props.isWinning ? "square--winning" : null)}
-      onClick={props.onClick}
-    >
-      {props.value}
-    </button>
-  );
-}
-
-// -------------BOARD-------------
-class Board extends React.Component
-{
-  renderSquare(i) {
-    return (
-      <Square
-        isWinning={this.props.winningSquares.includes(i)}
-        key={"square" + i}
-        value={this.props.squares[i]}
-        onClick={() => this.props.onClick(i)}
-      />
-    );
-  }
-
-  render() {
-    const board = [];
-
-    for (var i = 0; i < boardSize; i++)
-    {
-      let row = [];
-      for (var j = 0; j < boardSize; j++)
-      {
-        row.push(this.renderSquare(i * boardSize + j))
-      }
-      board.push(
-        <div className="board-row">
-          {row}
-        </div>
-      )
-    }
-
-    return (
-      <div>
-        <div>
-          </div>
-            <div className="board">
-              {board}
-          </div>
-      </div>
-    );
-  }
-}
+import './Game.css';
+import Board from './components/Board.js';
+const boardSize = 20; // Board.js also contain this parameter
 
 // -------------GAME-------------
 class Game extends React.Component
@@ -174,6 +119,28 @@ class Game extends React.Component
       </div>
     );
   }
+}
+
+function HelloWorld({greeting = "hello", greeted = '"World"', silent = false, onMouseOver,}) {
+
+  if(!greeting){return null};
+
+     // TODO: Don't use random in render
+  let num = Math.floor (Math.random() * 1E+7).toString().replace(/\.\d+/ig, "")
+
+  return <div className='HelloWorld' title={`You are visitor number ${ num }`} onMouseOver={onMouseOver}>
+
+    <strong>{ greeting.slice( 0, 1 ).toUpperCase() + greeting.slice(1).toLowerCase() }</strong>
+    {greeting.endsWith(",") ? " " : <span style={{color: '\grey'}}>", "</span> }
+    <em>
+	{ greeted }
+	</em>
+    { (silent)
+      ? "."
+      : "!"}
+
+    </div>;
+
 }
 
 //----------------------------------------------------
