@@ -8,7 +8,7 @@ class Board extends React.Component
 {
   renderSquare(i) {
     return (
-      <Square
+      <Squareas
         isWinning={this.props.winningSquares.includes(i)}
         key={"square" + i}
         value={this.props.squares[i]}
