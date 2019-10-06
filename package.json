@@ -1,5 +1,5 @@
 {
-  "name": "1612213-tic-tac-toe-vn",
+  "name": "1612213-tic-tac-toe-extra",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -32,14 +32,14 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tomcao410/1612213-Tic-Tac-Toe-Vietnamese.git"
+    "url": "git+https://github.com/tomcao410/1612213-tic-tac-toe-extra.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tomcao410/1612213-Tic-Tac-Toe-Vietnamese/issues"
+    "url": "https://github.com/tomcao410/1612213-tic-tac-toe-extra/issues"
   },
-  "homepage": "https://github.com/tomcao410/1612213-Tic-Tac-Toe-Vietnamese#readme",
+  "homepage": "https://github.com/tomcao410/1612213-tic-tac-toe-extra#readme",
   "devDependencies": {
     "eslint": "^6.4.0",
     "eslint-config-airbnb": "^18.0.1",
